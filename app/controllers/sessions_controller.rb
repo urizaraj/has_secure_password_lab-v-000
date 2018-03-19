@@ -6,11 +6,11 @@ class SessionsController < ApplicationController
 
     authenticated = user.try(:authenticate, params[:password])
 
+    binding.pry
+
     return redirect_to login_path unless authenticated
 
     session[:user_id] = user.id
-
-    binding.pry
 
     redirect_to welcome_path
   end
