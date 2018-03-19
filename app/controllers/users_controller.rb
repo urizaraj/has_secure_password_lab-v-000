@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def strong_params
-    params.require(:user).permit(*%i[name password password_confirmation])
+    params.require(:user).permit(*%i[name password])
   end
 
   def confirmation_match
