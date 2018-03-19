@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
 
     session[:user_id] = user.id
 
+    binding.pry
+
     redirect_to welcome_path
   end
 end
