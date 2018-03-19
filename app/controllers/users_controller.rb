@@ -4,10 +4,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    return redirect_to new_user_path unless confirmation_match
+    # return redirect_to new_user_path unless confirmation_match
 
     user = User.create(strong_params)
 
+    return redirect_to new_user_path unless user
+    
     session[:user_id] = user.id
     redirect_to welcome_path
   end
