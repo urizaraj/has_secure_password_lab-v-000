@@ -8,6 +8,6 @@ class SessionsController < ApplicationController
 
     return redirect_to :back unless authenticated
 
-
+    session[:user_id] = user_id
   end
 end
