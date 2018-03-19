@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     user = User.create(strong_params)
 
     return redirect_to new_user_path unless user
-    
+
     session[:user_id] = user.id
     redirect_to welcome_path
   end
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def strong_params
-    params.require(:user).permit(*%i[name password])
+    params.require(:user).permit(*%i[name password password_confirmation])
   end
 
   def confirmation_match
