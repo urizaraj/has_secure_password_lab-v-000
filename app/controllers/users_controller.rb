@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def welcome
-
+    @user = User.find(session[:user_id])
   end
 
   def strong_params
