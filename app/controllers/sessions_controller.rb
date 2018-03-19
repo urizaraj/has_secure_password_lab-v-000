@@ -9,5 +9,7 @@ class SessionsController < ApplicationController
     return redirect_to :back unless authenticated
 
     session[:user_id] = user_id
+
+    redirect_to welcome_path
   end
 end
